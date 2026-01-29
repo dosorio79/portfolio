@@ -1,0 +1,47 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const publications = await getCollection("publications");
+
+  return publications.map((pub) => ({
+    params: { slug: pub.slug },
+    props: { pub },
+  }));
+}
+
+const { pub } = Astro.props;
+const { data, body } = pub;
+---
+
+<BaseLayout title={data.title}>
+  <article class="font-serif leading-relaxed text-slate-800">
+    <header class="mb-8">
+      <h1 class="font-sans text-3xl font-semibold">
+        {data.title}
+      </h1>
+
+      <p class="mt-2 text-sm text-slate-500 font-sans">
+        {data.journal} · {data.year}
+      </p>
+
+      <p class="mt-1 text-sm text-slate-500 font-sans">
+        {data.authors.join(", ")}
+      </p>
+
+      <a
+        href={data.link}
+        class="mt-4 inline-block font-sans text-sm text-blue-600 hover:underline"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View publication →
+      </a>
+    </header>
+
+    <section class="prose prose-slate max-w-none">
+      {body}
+    </section>
+  </article>
+</BaseLayout>
