@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const publications = await getCollection("publications");
+---
+
+<BaseLayout title="Publications">
+  <h1 class="text-2xl font-semibold">Publications</h1>
+
+  <ul class="mt-6 space-y-6">
+    {publications.map(({ data, body }) => (
+      <li>
+        <h2 class="font-medium">{data.title} ({data.year})</h2>
+        <p class="text-slate-600">{body}</p>
+        <p class="text-sm text-slate-500">
+          {data.journal} · {data.authors.join(", ")}
+        </p>
+        <a class="text-sm text-sky-700 underline" href={data.link}>
+          Read publication
+        </a>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>
