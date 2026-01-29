@@ -4,15 +4,29 @@ const links = [
   { href: "/projects", label: "Projects" },
   { href: "/publications", label: "Publications" },
 ];
+
+const currentPath = Astro.url.pathname;
 ---
 
-<nav class="mb-12 flex gap-6 border-b border-slate-200 pb-4">
-  {links.map(link => (
-    <a
-      href={link.href}
-      class="text-slate-700 hover:text-slate-900"
-    >
-      {link.label}
-    </a>
-  ))}
+<nav class="mb-12 flex gap-6 border-b border-slate-200 pb-4 font-sans">
+  {links.map((link) => {
+    const isActive =
+      link.href === "/"
+        ? currentPath === "/"
+        : currentPath.startsWith(link.href);
+
+    return (
+      <a
+        href={link.href}
+        class={[
+          "pb-1",
+          isActive
+            ? "border-b-2 border-slate-900 text-slate-900"
+            : "text-slate-600 hover:text-slate-900",
+        ].join(" ")}
+      >
+        {link.label}
+      </a>
+    );
+  })}
 </nav>

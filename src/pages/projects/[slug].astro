@@ -15,8 +15,24 @@ const { project } = Astro.props;
 const { data, body } = project;
 ---
 
-<BaseLayout title={data.title}>
+<BaseLayout
+  title={`${data.title} — Project`}
+  description={
+    data.impact ??
+    "Applied data science project focused on modeling, interpretation, and decision support."
+  }
+>
   <article class="font-serif leading-relaxed text-slate-800">
+    <nav class="mb-6 font-sans text-sm text-slate-500">
+      <a href="/projects" class="hover:underline">
+        Projects
+      </a>
+      <span class="mx-2">→</span>
+      <span class="text-slate-700">
+        {data.title}
+      </span>
+    </nav>
+
     <header class="mb-8">
       <h1 class="font-sans text-3xl font-semibold">
         {data.title}

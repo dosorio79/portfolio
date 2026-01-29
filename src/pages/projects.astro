@@ -5,13 +5,16 @@ import { getCollection } from "astro:content";
 const projects = await getCollection("projects");
 ---
 
-<BaseLayout title="Projects">
+<BaseLayout
+  title="Projects — Daniel Osório"
+  description="Selected data science and applied machine learning projects, focused on pricing, interpretability, and decision systems."
+>
   <h1 class="text-2xl font-semibold">Projects</h1>
 
   <div class="mt-12 font-serif leading-relaxed text-slate-800">
     <ul class="space-y-6">
       {projects.map((project) => (
-        <li>
+        <li class="border-l-2 border-slate-200 pl-4">
           <h2 class="font-medium">
             <a
               href={`/projects/${project.slug}`}
@@ -19,13 +22,17 @@ const projects = await getCollection("projects");
             >
               {project.data.title}
             </a>
-            {" "}
-            ({project.data.year})
           </h2>
-          <p class="mt-4 text-slate-600">{project.body}</p>
-          <p class="mt-4 text-sm text-slate-500">
-            {project.data.stack.join(" · ")}
+
+          <p class="mt-1 text-sm text-slate-500">
+            {project.data.year} · {project.data.stack.join(" · ")}
           </p>
+
+          {project.data.impact && (
+            <p class="mt-2 text-sm text-slate-700">
+              {project.data.impact}
+            </p>
+          )}
         </li>
       ))}
     </ul>

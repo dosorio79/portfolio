@@ -1,6 +1,12 @@
 ---
 import Header from "../components/Header.astro";
-const { title = "Daniel Osório" } = Astro.props;
+
+const {
+  title = "Daniel Osório — Data Scientist",
+  description = "Data scientist working on pricing, decision systems, and applied machine learning, with a background in academic research in cell biology.",
+} = Astro.props;
+
+const canonicalUrl = Astro.url.origin + Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -8,13 +14,31 @@ const { title = "Daniel Osório" } = Astro.props;
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
+
+        <title>{title}</title>
+        <meta name="description" content={description} />
+
+        <!-- Canonical -->
+        <link rel="canonical" href={canonicalUrl} />
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonicalUrl} />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+
+        <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;600&display=swap"
             rel="stylesheet"
         />
-        <title>{title}</title>
     </head>
     <body class="min-h-screen bg-white font-sans text-slate-900">
         <div class="mx-auto max-w-3xl p-6">
