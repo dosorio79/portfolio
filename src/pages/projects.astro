@@ -10,12 +10,21 @@ const projects = await getCollection("projects");
 
   <div class="mt-12 font-serif leading-relaxed text-slate-800">
     <ul class="space-y-6">
-      {projects.map(({ data, body }) => (
+      {projects.map((project) => (
         <li>
-          <h2 class="font-medium">{data.title} ({data.year})</h2>
-          <p class="mt-4 text-slate-600">{body}</p>
+          <h2 class="font-medium">
+            <a
+              href={`/projects/${project.slug}`}
+              class="hover:underline"
+            >
+              {project.data.title}
+            </a>
+            {" "}
+            ({project.data.year})
+          </h2>
+          <p class="mt-4 text-slate-600">{project.body}</p>
           <p class="mt-4 text-sm text-slate-500">
-            {data.stack.join(" · ")}
+            {project.data.stack.join(" · ")}
           </p>
         </li>
       ))}

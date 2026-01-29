@@ -2,9 +2,81 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Daniel Osório — Portfolio">
-  <h1 class="text-3xl font-semibold">Daniel Osório</h1>
-  <p class="mt-2 text-slate-600">
-    Data scientist (personal loans pricing) with a past in cell biology research.
-  </p>
+<BaseLayout title="Daniel Osório — Data Scientist">
+
+  <!-- HERO -->
+  <section class="mt-12">
+    <h1 class="text-3xl font-semibold tracking-tight">
+      Daniel Osório
+    </h1>
+
+    <p class="mt-4 max-w-2xl text-lg text-slate-700">
+      Data scientist working on pricing and decision systems,
+      with a background in academic research in cell biology.
+    </p>
+  </section>
+
+  <!-- CURRENT FOCUS -->
+  <section class="mt-12">
+    <h2 class="font-sans text-xl font-semibold">
+      Current work
+    </h2>
+
+    <div class="mt-12 font-serif leading-relaxed text-slate-800">
+      <p>
+        I currently work on applied data science problems in the
+        context of personal finance, with a focus on pricing,
+        uplift modeling, interpretability, and decision support.
+      </p>
+
+      <p class="mt-4">
+        My work sits at the intersection of statistical rigor,
+        machine learning, and business constraints — translating
+        models into decisions that can be explained, monitored,
+        and improved over time.
+      </p>
+    </div>
+  </section>
+
+  <!-- RESEARCH BACKGROUND -->
+  <section class="mt-12">
+    <h2 class="font-sans text-xl font-semibold">
+      Research background
+    </h2>
+
+    <div class="mt-12 font-serif leading-relaxed text-slate-800">
+      <p>
+        Before moving into data science, I trained as an academic
+        researcher in cell biology, focusing on cytoskeleton
+        dynamics and actomyosin contractility.
+      </p>
+
+      <p class="mt-4">
+        This background shaped how I approach problems today:
+        hypothesis-driven thinking, careful interpretation of
+        results, and respect for uncertainty and limitations.
+      </p>
+    </div>
+  </section>
+
+  <!-- WHERE TO NEXT -->
+  <section class="mt-12 border-t border-slate-200 pt-12">
+    <h2 class="font-sans text-lg font-semibold">
+      Explore
+    </h2>
+
+    <ul class="mt-4 space-y-6 font-sans">
+      <li>
+        <a href="/projects" class="text-blue-600 hover:underline">
+          → Data science & applied ML projects
+        </a>
+      </li>
+      <li>
+        <a href="/publications" class="text-blue-600 hover:underline">
+          → Academic publications and research output
+        </a>
+      </li>
+    </ul>
+  </section>
+
 </BaseLayout>

@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { data, body } = project;
+---
+
+<BaseLayout title={data.title}>
+  <article class="font-serif leading-relaxed text-slate-800">
+    <header class="mb-8">
+      <h1 class="font-sans text-3xl font-semibold">
+        {data.title}
+      </h1>
+
+      <p class="mt-2 text-sm text-slate-500 font-sans">
+        {data.year} · {data.stack.join(" · ")}
+      </p>
+
+      {data.impact && (
+        <p class="mt-4 rounded bg-slate-50 p-4 text-slate-700 font-sans">
+          Impact: {data.impact}
+        </p>
+      )}
+    </header>
+
+    <section class="prose prose-slate max-w-none">
+      {body}
+    </section>
+  </article>
+</BaseLayout>
