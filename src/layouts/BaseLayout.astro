@@ -2,10 +2,11 @@
 import Header from "../components/Header.astro";
 
 const {
-  title = "Daniel Osório — Data Scientist",
-  description = "Data scientist working on pricing, decision systems, and applied machine learning, with a background in academic research in cell biology.",
+  title = "Daniel Osório",
+  description = "...",
 } = Astro.props;
 
+const fullTitle = `${title} | Portfolio`;
 const canonicalUrl = Astro.url.origin + Astro.url.pathname;
 ---
 
@@ -15,7 +16,7 @@ const canonicalUrl = Astro.url.origin + Astro.url.pathname;
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
 
-        <title>{title}</title>
+        <title>{fullTitle}</title>
         <meta name="description" content={description} />
 
         <!-- Canonical -->
@@ -23,14 +24,19 @@ const canonicalUrl = Astro.url.origin + Astro.url.pathname;
 
         <!-- Open Graph -->
         <meta property="og:type" content="website" />
-        <meta property="og:title" content={title} />
+        <meta property="og:title" content={fullTitle} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={canonicalUrl} />
 
         <!-- Twitter -->
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={title} />
+        <meta name="twitter:title" content={fullTitle} />
         <meta name="twitter:description" content={description} />
+
+        <!-- Favicon -->
+        <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon/favicon-32.png" sizes="32x32" type="image/png" />
+        <link rel="icon" href="/favicon/favicon-16.png" sizes="16x16" type="image/png" />
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />

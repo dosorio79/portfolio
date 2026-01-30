@@ -1,4 +1,6 @@
 ---
+import SocialLinks from "./SocialLinks.astro";
+
 const links = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
@@ -8,25 +10,29 @@ const links = [
 const currentPath = Astro.url.pathname;
 ---
 
-<nav class="mb-12 flex gap-6 border-b border-slate-200 pb-4 font-sans">
-  {links.map((link) => {
-    const isActive =
-      link.href === "/"
-        ? currentPath === "/"
-        : currentPath.startsWith(link.href);
+<nav class="mb-12 flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 pb-4 font-sans">
+  <div class="flex gap-6">
+    {links.map((link) => {
+      const isActive =
+        link.href === "/"
+          ? currentPath === "/"
+          : currentPath.startsWith(link.href);
 
-    return (
-      <a
-        href={link.href}
-        class={[
-          "pb-1",
-          isActive
-            ? "border-b-2 border-slate-900 text-slate-900"
-            : "text-slate-600 hover:text-slate-900",
-        ].join(" ")}
-      >
-        {link.label}
-      </a>
-    );
-  })}
+      return (
+        <a
+          href={link.href}
+          class={[
+            "pb-1",
+            isActive
+              ? "border-b-2 border-slate-900 text-slate-900"
+              : "text-slate-600 hover:text-slate-900",
+          ].join(" ")}
+        >
+          {link.label}
+        </a>
+      );
+    })}
+  </div>
+
+  <SocialLinks />
 </nav>
