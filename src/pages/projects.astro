@@ -14,11 +14,11 @@ const projects = await getCollection("projects");
   <div class="mt-12 font-serif leading-relaxed text-slate-800">
     <ul class="space-y-6">
       {projects.map((project) => (
-        <li class="border-l-2 border-slate-200 pl-4">
+        <li class="rounded-sm border-l-2 border-slate-200 pl-4 transition-colors hover:bg-slate-50/60">
           <h2 class="font-medium">
             <a
               href={`/projects/${project.slug}`}
-              class="hover:underline"
+              class="hover:underline underline-offset-4"
             >
               {project.data.title}
             </a>
