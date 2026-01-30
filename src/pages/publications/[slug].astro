@@ -15,8 +15,21 @@ const { pub } = Astro.props;
 const { data, body } = pub;
 ---
 
-<BaseLayout title={data.title}>
+<BaseLayout
+  title={`${data.title} — Publication`}
+  description={`Academic publication in ${data.journal} (${data.year}).`}
+>
   <article class="font-serif leading-relaxed text-slate-800">
+    <nav class="mb-6 font-sans text-sm text-slate-500">
+      <a href="/publications" class="hover:underline">
+        Publications
+      </a>
+      <span class="mx-2">→</span>
+      <span class="text-slate-700">
+        {data.title}
+      </span>
+    </nav>
+
     <header class="mb-8">
       <h1 class="font-sans text-3xl font-semibold">
         {data.title}
