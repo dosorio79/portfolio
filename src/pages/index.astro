@@ -15,23 +15,35 @@ import SocialLinks from "../components/SocialLinks.astro";
 
     <!-- PRESENT / DATA SCIENCE (comes first on mobile) -->
     <div
-      class="order-1 border-l-2 border-slate-900 pl-6 md:order-2 accent-enter"
+      class="order-1 border-l-2 border-slate-900 pl-6 md:order-2 flex gap-6 accent-enter"
     >
-      <h1 class="font-sans text-3xl font-semibold tracking-tight">
-        Daniel Osório
-      </h1>
+      <div class="flex-1">
+        <h1 class="font-sans text-3xl font-semibold tracking-tight">
+          Daniel Osório
+        </h1>
 
-      <p class="mt-3 font-serif text-lg leading-relaxed text-slate-700">
-        Data scientist building pricing and decision systems,
-        where models inform real-world choices.
-      </p>
+        <p class="mt-3 font-serif text-lg leading-relaxed text-slate-700">
+          Data scientist building pricing and decision systems,
+          where models inform real-world choices.
+        </p>
 
-      <p class="mt-4 text-sm font-sans text-slate-500">
-        Pricing · Uplift modeling · Decision systems · Applied ML
-      </p>
+        <p class="mt-4 text-sm font-sans text-slate-500">
+          Pricing · Uplift modeling · Decision systems · Applied ML
+        </p>
 
-      <div class="mt-5">
-        <SocialLinks />
+        <div class="mt-5">
+          <SocialLinks />
+        </div>
+      </div>
+
+      <!-- PHOTO -->
+      <div class="hidden md:block shrink-0">
+        <img
+          src="/images/daniel_osorio.png"
+          alt="Portrait of Daniel Osório"
+          class="h-32 w-32 rounded-md object-cover grayscale"
+          loading="lazy"
+        />
       </div>
     </div>
 
