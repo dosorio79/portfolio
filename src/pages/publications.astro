@@ -3,6 +3,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
 const publications = await getCollection("publications");
+
+const byNewest = (a, b) => {
+  if (a.data.year !== b.data.year) return b.data.year - a.data.year;
+  return a.data.title.localeCompare(b.data.title);
+};
+
+const featured = publications.filter(p => p.data.featured).sort(byNewest);
+const rest = publications.filter(p => !p.data.featured).sort(byNewest);
+
+const peerReviewedFeatured = featured.filter(p => p.data.type === "peer-reviewed");
+const preprintFeatured = featured.filter(p => p.data.type === "preprint");
+const peerReviewedRest = rest.filter(p => p.data.type === "peer-reviewed");
+const preprintRest = rest.filter(p => p.data.type === "preprint");
 ---
 
 <BaseLayout
@@ -12,19 +25,90 @@ const publications = await getCollection("publications");
   <h1 class="text-2xl font-semibold">Publications</h1>
 
   <div class="mt-12 font-serif leading-relaxed text-slate-800">
-    <ul class="space-y-6">
-      {publications.map(({ data, body }) => (
-        <li>
-          <h2 class="font-medium">{data.title} ({data.year})</h2>
-          <p class="mt-4 text-slate-600">{body}</p>
-          <p class="mt-4 text-sm text-slate-500">
-            {data.journal} · {data.authors.join(", ")}
-          </p>
-          <a class="mt-4 inline-block text-sm text-sky-700 underline" href={data.link}>
-            Read publication
-          </a>
-        </li>
-      ))}
-    </ul>
+    {featured.length > 0 && (
+      <>
+        <h2 class="text-lg font-semibold font-sans text-slate-900">Featured</h2>
+        {featured.length > 0 && (
+          <ul class="mt-6 space-y-6">
+            {featured.map(({ data, body }) => (
+              <li class="rounded-sm border-l-2 border-slate-200 pl-4">
+                <h3 class="font-medium">{data.title} ({data.year})</h3>
+                <p class="mt-2 text-sm leading-snug text-slate-600">{body}</p>
+                <p class="mt-2 text-sm text-slate-500">
+                  {data.journal} · {data.authors.join(", ")}
+                </p>
+                {data.link ? (
+                  <a class="mt-2 inline-block text-sm text-sky-700 underline" href={data.link}>
+                    Read publication
+                  </a>
+                ) : (
+                  <span class="mt-2 inline-block text-sm text-slate-500">Link unavailable</span>
+                )}
+              </li>
+            ))}
+          </ul>
+        )}
+      </>
+    )}
+
+    {rest.length > 0 && (
+      <details class="mt-10">
+        <summary class="cursor-pointer text-sm font-medium text-slate-600 hover:text-slate-900">
+          Show all publications
+        </summary>
+        <div class="mt-6">
+          {peerReviewedRest.length > 0 && (
+            <div>
+              <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500 font-sans">
+                Peer-reviewed
+              </h2>
+              <ul class="mt-4 space-y-6">
+                {peerReviewedRest.map(({ data, body }) => (
+                  <li class="rounded-sm border-l-2 border-slate-200 pl-4">
+                    <h3 class="font-medium">{data.title} ({data.year})</h3>
+                    <p class="mt-2 text-sm leading-snug text-slate-600">{body}</p>
+                    <p class="mt-2 text-sm text-slate-500">
+                      {data.journal} · {data.authors.join(", ")}
+                    </p>
+                    {data.link ? (
+                      <a class="mt-2 inline-block text-sm text-sky-700 underline" href={data.link}>
+                        Read publication
+                      </a>
+                    ) : (
+                      <span class="mt-2 inline-block text-sm text-slate-500">Link unavailable</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {preprintRest.length > 0 && (
+            <div class="mt-8">
+              <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500 font-sans">
+                Preprints
+              </h2>
+              <ul class="mt-4 space-y-6">
+                {preprintRest.map(({ data, body }) => (
+                  <li class="rounded-sm border-l-2 border-slate-200 pl-4">
+                    <h3 class="font-medium">{data.title} ({data.year})</h3>
+                    <p class="mt-2 text-sm leading-snug text-slate-600">{body}</p>
+                    <p class="mt-2 text-sm text-slate-500">
+                      {data.journal} · {data.authors.join(", ")}
+                    </p>
+                    {data.link ? (
+                      <a class="mt-2 inline-block text-sm text-sky-700 underline" href={data.link}>
+                        Read publication
+                      </a>
+                    ) : (
+                      <span class="mt-2 inline-block text-sm text-slate-500">Link unavailable</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </details>
+    )}
   </div>
 </BaseLayout>
