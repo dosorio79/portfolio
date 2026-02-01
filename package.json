@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "type": "module",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "scripts": {
     "clean:astro": "rm -rf .astro/collections .astro/data-store.json",
     "dev": "astro dev",
