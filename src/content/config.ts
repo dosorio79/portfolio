@@ -5,7 +5,11 @@ const projects = defineCollection({
     title: z.string(),
     year: z.number(),
     stack: z.array(z.string()),
-    impact: z.string().optional(),
+    context: z.enum(["course", "independent"]).optional(),
+    course_name: z.string().optional(),
+    summary: z.string().optional(),
+    repo: z.string().url().optional(),
+    authors: z.array(z.string()).optional(),
   }),
 });
 
