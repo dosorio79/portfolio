@@ -1,7 +1,7 @@
 ---
 title: "Src-dependent NM2A tyrosine-phosphorylation regulates actomyosin dynamics"
 year: 2020
-journal: ""
+journal: "bioRxiv"
 authors:
   - "Brito, Cláudia"
   - "Mesquita, Francisco S."
@@ -13,7 +13,7 @@ authors:
   - "Cabanes, Didier"
   - "Sousa, Sandra"
 link: "https://doi.org/10.1101/2020.08.12.246090"
-type: "peer-reviewed"
+type: "preprint"
 featured: false
 first_author: false
 ---
