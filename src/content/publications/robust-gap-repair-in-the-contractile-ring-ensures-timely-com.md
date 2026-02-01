@@ -12,6 +12,7 @@ authors:
   - "Gassmann, R."
   - "Telley, I.A."
   - "Carvalho, A.X."
+link: "https://doi.org/10.1083/jcb.201605080"
 type: "peer-reviewed"
 featured: true
 first_author: false

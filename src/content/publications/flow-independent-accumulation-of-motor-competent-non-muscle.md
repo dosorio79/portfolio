@@ -1,7 +1,7 @@
 ---
 title: "Flow-independent accumulation of motor-competent non-muscle myosin II in the contractile ring is essential for cytokinesis"
 year: 2018
-journal: ""
+journal: "bioRxiv"
 authors:
   - "Daniel Sampaio Osorio"
   - "Fung Yi Chan"

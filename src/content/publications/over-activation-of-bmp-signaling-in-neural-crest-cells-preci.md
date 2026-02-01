@@ -1,7 +1,7 @@
 ---
 title: "Over-activation of BMP signaling in neural crest cells precipitates heart outflow tract septation"
 year: 2019
-journal: ""
+journal: "bioRxiv"
 authors:
   - "Darrigrand, Jean-François"
   - "Valente, Mariana"
@@ -13,7 +13,7 @@ authors:
   - "Ribes, Vanessa"
   - "Cadot, Bruno"
 link: "https://doi.org/10.1101/548511"
-type: "peer-reviewed"
+type: "preprint"
 featured: false
 first_author: false
 ---

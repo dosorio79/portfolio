@@ -9,13 +9,45 @@ const byNewest = (a, b) => {
   return a.data.title.localeCompare(b.data.title);
 };
 
-const featured = publications.filter(p => p.data.featured).sort(byNewest);
-const rest = publications.filter(p => !p.data.featured).sort(byNewest);
+const sortedPublications = [...publications].sort(byNewest);
+const featured = sortedPublications.filter(
+  p => p.data.featured === true || p.data.featured === "true"
+);
+const peerReviewedAll = sortedPublications.filter(
+  p => p.data.type?.toLowerCase?.() === "peer-reviewed"
+);
+const preprintAll = sortedPublications.filter(
+  p => p.data.type?.toLowerCase?.() === "preprint"
+);
 
-const peerReviewedFeatured = featured.filter(p => p.data.type === "peer-reviewed");
-const preprintFeatured = featured.filter(p => p.data.type === "preprint");
-const peerReviewedRest = rest.filter(p => p.data.type === "peer-reviewed");
-const preprintRest = rest.filter(p => p.data.type === "preprint");
+const highlightTargets = [
+  "Daniel Sampaio Osório",
+  "Osorio DS",
+  "Osório, D.S.",
+  "Osorio, D.S.",
+  "Osório, Daniel S.",
+  "Osorio, Daniel S.",
+  "Daniel S. Osório",
+  "Daniel S. Osorio",
+  "Daniel Osório",
+  "Daniel Osorio",
+  "Osório, D.S",
+  "Osorio, D.S",
+];
+
+const normalizeName = (value) =>
+  value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+
+const highlightSet = new Set(highlightTargets.map(normalizeName));
+
+const isHighlightedAuthor = (name) => highlightSet.has(normalizeName(name));
+
+
 ---
 
 <BaseLayout
@@ -35,7 +67,19 @@ const preprintRest = rest.filter(p => p.data.type === "preprint");
                 <h3 class="font-medium">{data.title} ({data.year})</h3>
                 <p class="mt-2 text-sm leading-snug text-slate-600">{body}</p>
                 <p class="mt-2 text-sm text-slate-500">
-                  {data.journal} · {data.authors.join(", ")}
+                  <span class="font-semibold text-slate-700">{data.journal}</span> ·{" "}
+                  {data.authors.map((author, index) => (
+                    <span>
+                      {index > 0 ? ", " : ""}
+                      {isHighlightedAuthor(author) ? (
+                        <span class="text-slate-800 underline decoration-slate-500 underline-offset-2">
+                          {author}
+                        </span>
+                      ) : (
+                        author
+                      )}
+                    </span>
+                  ))}
                 </p>
                 {data.link ? (
                   <a class="mt-2 inline-block text-sm text-sky-700 underline" href={data.link}>
@@ -51,24 +95,36 @@ const preprintRest = rest.filter(p => p.data.type === "preprint");
       </>
     )}
 
-    {rest.length > 0 && (
+    {sortedPublications.length > 0 && (
       <details class="mt-10">
         <summary class="cursor-pointer text-sm font-medium text-slate-600 hover:text-slate-900">
           Show all publications
         </summary>
         <div class="mt-6">
-          {peerReviewedRest.length > 0 && (
+          {peerReviewedAll.length > 0 && (
             <div>
               <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500 font-sans">
                 Peer-reviewed
               </h2>
               <ul class="mt-4 space-y-6">
-                {peerReviewedRest.map(({ data, body }) => (
+                {peerReviewedAll.map(({ data, body }) => (
                   <li class="rounded-sm border-l-2 border-slate-200 pl-4">
                     <h3 class="font-medium">{data.title} ({data.year})</h3>
                     <p class="mt-2 text-sm leading-snug text-slate-600">{body}</p>
                     <p class="mt-2 text-sm text-slate-500">
-                      {data.journal} · {data.authors.join(", ")}
+                      <span class="font-semibold text-slate-700">{data.journal}</span> ·{" "}
+                      {data.authors.map((author, index) => (
+                        <span>
+                          {index > 0 ? ", " : ""}
+                          {isHighlightedAuthor(author) ? (
+                            <span class="text-slate-800 underline decoration-slate-500 underline-offset-2">
+                              {author}
+                            </span>
+                          ) : (
+                            author
+                          )}
+                        </span>
+                      ))}
                     </p>
                     {data.link ? (
                       <a class="mt-2 inline-block text-sm text-sky-700 underline" href={data.link}>
@@ -82,18 +138,30 @@ const preprintRest = rest.filter(p => p.data.type === "preprint");
               </ul>
             </div>
           )}
-          {preprintRest.length > 0 && (
+          {preprintAll.length > 0 && (
             <div class="mt-8">
               <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500 font-sans">
                 Preprints
               </h2>
               <ul class="mt-4 space-y-6">
-                {preprintRest.map(({ data, body }) => (
+                {preprintAll.map(({ data, body }) => (
                   <li class="rounded-sm border-l-2 border-slate-200 pl-4">
                     <h3 class="font-medium">{data.title} ({data.year})</h3>
                     <p class="mt-2 text-sm leading-snug text-slate-600">{body}</p>
                     <p class="mt-2 text-sm text-slate-500">
-                      {data.journal} · {data.authors.join(", ")}
+                      <span class="font-semibold text-slate-700">{data.journal}</span> ·{" "}
+                      {data.authors.map((author, index) => (
+                        <span>
+                          {index > 0 ? ", " : ""}
+                          {isHighlightedAuthor(author) ? (
+                            <span class="text-slate-800 underline decoration-slate-500 underline-offset-2">
+                              {author}
+                            </span>
+                          ) : (
+                            author
+                          )}
+                        </span>
+                      ))}
                     </p>
                     {data.link ? (
                       <a class="mt-2 inline-block text-sm text-sky-700 underline" href={data.link}>

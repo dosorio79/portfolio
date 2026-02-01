@@ -11,6 +11,7 @@ authors:
   - "Koch, B."
   - "Mattaj, I.W."
   - "Gomes, E.R."
+link: "https://doi.org/10.1242/jcs.087049"
 type: "peer-reviewed"
 featured: true
 first_author: true

@@ -1,7 +1,7 @@
 ---
 title: "Anillin forms linear structures and facilitates furrow ingression after septin and formin depletion"
 year: 2022
-journal: ""
+journal: "bioRxiv"
 authors:
   - "Lebedev, Mikhail"
   - "Chan, Fung-Yi"
