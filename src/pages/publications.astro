@@ -1,18 +1,16 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 
 const publications = await getCollection("publications");
 
-const byNewest = (a, b) => {
+const byNewest = (a: CollectionEntry<"publications">, b: CollectionEntry<"publications">) => {
   if (a.data.year !== b.data.year) return b.data.year - a.data.year;
   return a.data.title.localeCompare(b.data.title);
 };
 
 const sortedPublications = [...publications].sort(byNewest);
-const featured = sortedPublications.filter(
-  p => p.data.featured === true || p.data.featured === "true"
-);
+const featured = sortedPublications.filter((p) => p.data.featured);
 const peerReviewedAll = sortedPublications.filter(
   p => p.data.type?.toLowerCase?.() === "peer-reviewed"
 );
@@ -35,7 +33,7 @@ const highlightTargets = [
   "Osorio, D.S",
 ];
 
-const normalizeName = (value) =>
+const normalizeName = (value: string) =>
   value
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
@@ -45,7 +43,7 @@ const normalizeName = (value) =>
 
 const highlightSet = new Set(highlightTargets.map(normalizeName));
 
-const isHighlightedAuthor = (name) => highlightSet.has(normalizeName(name));
+const isHighlightedAuthor = (name: string) => highlightSet.has(normalizeName(name));
 
 
 ---
