@@ -1,26 +1,2 @@
 @import "tailwindcss";
 
-@media (prefers-reduced-motion: no-preference) {
-  .accent-enter {
-    position: relative;
-  }
-
-  .accent-enter::before {
-    content: "";
-    position: absolute;
-    left: -2px;
-    top: 0;
-    height: 100%;
-    width: 2px;
-    background-color: #0f172a; /* slate-900 */
-    transform: scaleY(0);
-    transform-origin: top;
-    animation: accent-grow 600ms ease-out forwards;
-  }
-
-  @keyframes accent-grow {
-    to {
-      transform: scaleY(1);
-    }
-  }
-}
