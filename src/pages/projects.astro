@@ -5,6 +5,15 @@ import { getCollection } from "astro:content";
 const projects = await getCollection("projects");
 const byNewest = (a, b) => b.data.year - a.data.year;
 const sortedProjects = [...projects].sort(byNewest);
+
+const courseLinks = [
+  { match: "DataTalksClub", href: "https://datatalks.club" },
+  { match: "ISEP", href: "https://www.isep.ipp.pt/Course/Course/325" },
+  { match: "Le Wagon", href: "https://www.lewagon.com/data-science-course" },
+];
+
+const getCourseLink = (courseName) =>
+  courseLinks.find((link) => courseName.includes(link.match))?.href;
 ---
 
 <BaseLayout
@@ -14,7 +23,7 @@ const sortedProjects = [...projects].sort(byNewest);
   <h1 class="text-2xl font-semibold">Projects</h1>
 
   <div class="mt-6 font-sans text-sm text-slate-600">
-    These are personal or course projects. I do not share work completed for employers.
+    Selected personal and course work; employer projects are not included.
   </div>
 
   <div class="mt-8 font-serif leading-relaxed text-slate-800">
@@ -36,7 +45,26 @@ const sortedProjects = [...projects].sort(byNewest);
               <> · {project.data.context === "course" ? "Course" : "Independent"}</>
             )}
             {project.data.context === "course" && project.data.course_name && (
-              <> · {project.data.course_name}</>
+              <>
+                {" · "}
+                {getCourseLink(project.data.course_name) ? (
+                  <a
+                    href={getCourseLink(project.data.course_name)}
+                    class="underline underline-offset-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {project.data.course_name}
+                  </a>
+                ) : (
+                  project.data.course_name
+                )}
+                {project.data.course_role && (
+                  <span class="ml-2 rounded-full border border-slate-200 px-2 py-0.5 text-[10px] uppercase tracking-wide text-slate-500">
+                    {project.data.course_role}
+                  </span>
+                )}
+              </>
             )}
           </p>
 
