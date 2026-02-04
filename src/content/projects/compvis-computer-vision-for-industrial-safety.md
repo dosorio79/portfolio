@@ -10,6 +10,7 @@ stack:
   - "Streamlit"
 context: "course"
 course_name: "Le Wagon Data Science Bootcamp (Batch 1181)"
+course_role: "capstone"
 summary: "Face detection and recognition on images and video for emergency monitoring in industrial safety contexts."
 repo: "https://github.com/dosorio79/computer_vision"
 authors:

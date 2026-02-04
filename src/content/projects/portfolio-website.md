@@ -11,6 +11,14 @@ summary: "A minimalist Astro portfolio focused on performance, clarity, and cont
 repo: "https://github.com/dosorio79/portfolio"
 ---
 
-A modern, minimalist portfolio built with Astro for static generation and Markdown-authored content.
-Designed for performance and clarity, with a simple structure and utility-first styling.
-Includes automated sitemap generation and internal link validation for reliable deployments.
+**Purpose**
+Static, content-first portfolio to present work clearly without runtime JavaScript.
+
+**Tech choices**
+Astro with Markdown content collections and Tailwind for a calm, readable layout.
+
+**Constraints**
+No SPA behavior, minimal dependencies, and a focus on performance and accessibility.
+
+**Recent updates**
+Project snapshots, architecture diagrams, and demo links to add context without clutter.
