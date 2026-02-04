@@ -5,65 +5,59 @@ import SocialLinks from "../components/SocialLinks.astro";
 
 <BaseLayout
   title="Daniel Osório — Data Scientist"
-  description="Data scientist working on pricing, uplift modeling, and decision systems, with a background in academic research in cell biology."
+  description="Data scientist working on pricing, marketing targeting, and decision systems, with a background in academic research in cell biology."
 >
 
-  <!-- HERO -->
-  <section
-    class="mt-16 grid grid-cols-1 gap-10 md:grid-cols-2"
-  >
+<!-- HERO -->
+<section class="mt-16 grid grid-cols-1 gap-10 md:grid-cols-2">
 
-    <!-- PRESENT / DATA SCIENCE (comes first on mobile) -->
-    <div
-      class="order-1 border-l-2 border-slate-900 pl-6 md:order-2 flex gap-6"
-    >
-      <div class="flex-1">
-        <h1 class="font-sans text-3xl font-semibold tracking-tight">
-          Daniel Osório
-        </h1>
+  <!-- PRESENT / DATA SCIENCE -->
+  <div class="order-1 border-l-2 border-slate-900 pl-6 flex gap-6">
+    <div class="flex-1">
+      <h1 class="font-sans text-3xl font-semibold tracking-tight">
+        Daniel Osório
+      </h1>
 
-        <p class="mt-3 font-serif text-lg leading-relaxed text-slate-700">
-          Data scientist building pricing and decision systems,
-          where models inform real-world choices.
-        </p>
-
-        <p class="mt-4 text-sm font-sans text-slate-500">
-          Pricing · Uplift modeling · Decision systems · Applied ML
-        </p>
-
-        <div class="mt-5">
-          <SocialLinks />
-        </div>
-      </div>
-
-      <!-- PHOTO -->
-      <div class="hidden md:block shrink-0">
-        <img
-          src="/images/daniel_osorio.png"
-          alt="Portrait of Daniel Osório"
-          class="h-32 w-32 rounded-md object-cover grayscale"
-          loading="lazy"
-        />
-      </div>
-    </div>
-
-    <!-- BACKGROUND / RESEARCH -->
-    <div
-      class="order-2 border-l-2 border-slate-200 pl-6 md:order-1"
-    >
-      <h2 class="font-sans text-sm uppercase tracking-wide text-slate-500">
-        Background
-      </h2>
-
-      <p class="mt-3 font-serif text-base leading-relaxed text-slate-800">
-        Trained as an academic researcher in cell biology, working on
-        cytoskeleton dynamics and actomyosin contractility.
+      <p class="mt-4 font-serif text-lg leading-relaxed text-slate-700 max-w-xl">
+        Data scientist building pricing and decision systems that
+        support real-world business decisions.
       </p>
+
+      <p class="mt-4 text-sm font-sans text-slate-500 max-w-md">
+        Pricing · Marketing targeting · Experimentation ·
+        Customer experience · Decision systems
+      </p>
+
+      <div class="mt-5">
+        <SocialLinks />
+      </div>
     </div>
 
-  </section>
+    <!-- PHOTO -->
+    <div class="hidden md:block shrink-0 mt-2">
+      <img
+        src="/images/daniel_osorio.png"
+        alt="Portrait of Daniel Osório"
+        class="h-32 w-32 rounded-md object-cover grayscale"
+        loading="lazy"
+      />
+    </div>
+  </div>
 
-  <!-- CURRENT FOCUS -->
+  <!-- QUOTE -->
+  <div class="order-2 border-l-2 border-slate-200 pl-6 pt-14">
+    <blockquote class="font-serif text-2xl italic leading-relaxed text-slate-600">
+      “All models are wrong, but some are useful.”
+    </blockquote>
+
+    <p class="mt-3 text-sm font-sans text-slate-400">
+      George Box
+    </p>
+  </div>
+
+</section>
+
+  <!-- CURRENT WORK -->
   <section class="mt-12">
     <h2 class="font-sans text-xl font-semibold">
       Current work
@@ -71,16 +65,16 @@ import SocialLinks from "../components/SocialLinks.astro";
 
     <div class="mt-12 font-serif leading-relaxed text-slate-800">
       <p>
-        I currently work on applied data science problems in the
-        context of personal finance, with a focus on pricing,
-        uplift modeling, interpretability, and decision support.
+        I currently work on applied data science problems in personal
+        finance, supporting pricing, marketing targeting, and customer
+        experience decisions through experimentation and analytical
+        modeling.
       </p>
 
       <p class="mt-4">
-        My work sits at the intersection of statistical rigor,
-        machine learning, and business constraints — translating
-        models into decisions that can be explained, monitored,
-        and improved over time.
+        My work focuses on translating analytical results into decisions
+        that can be explained, monitored, and continuously improved in
+        production environments.
       </p>
     </div>
   </section>
@@ -93,15 +87,16 @@ import SocialLinks from "../components/SocialLinks.astro";
 
     <div class="mt-12 font-serif leading-relaxed text-slate-800">
       <p>
-        Before moving into data science, I trained as an academic
-        researcher in cell biology, focusing on cytoskeleton
-        dynamics and actomyosin contractility.
+        Before moving into industry, I spent almost two decades in academic
+        research studying cytoskeleton dynamics and actomyosin contractility,
+        working in environments where data analysis, microscopy systems, and
+        computational tools were central to experimentation.
       </p>
 
       <p class="mt-4">
-        This background shaped how I approach problems today:
-        hypothesis-driven thinking, careful interpretation of
-        results, and respect for uncertainty and limitations.
+        This experience shaped how I approach problems today, combining
+        hypothesis-driven thinking, careful interpretation of results,
+        and awareness of uncertainty and experimental limitations.
       </p>
     </div>
   </section>
