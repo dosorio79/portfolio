@@ -1,14 +1,14 @@
 import fs from "node:fs";
 import path from "node:path";
-import { pathToFileURL } from "node:url";
 
 const distDir = path.resolve("dist");
 const astroConfigPath = path.resolve("astro.config.mjs");
 
 let basePath = "";
 try {
-  const astroConfig = (await import(pathToFileURL(astroConfigPath).href)).default;
-  const rawBase = astroConfig?.base ?? "/";
+  const configText = fs.readFileSync(astroConfigPath, "utf8");
+  const match = configText.match(/\bbase\s*:\s*["']([^"']+)["']/);
+  const rawBase = match?.[1] ?? "/";
   const normalized = rawBase.startsWith("/") ? rawBase : `/${rawBase}`;
   basePath = normalized === "/" ? "" : normalized.replace(/\/+$/, "");
 } catch {
