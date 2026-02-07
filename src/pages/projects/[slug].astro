@@ -5,6 +5,7 @@ import { getCollection } from "astro:content";
 const base = import.meta.env.BASE_URL;
 const basePath = base.endsWith("/") ? base : `${base}/`;
 const withBase = (path: string) => `${basePath}${path.replace(/^\/+/, "")}`;
+const withAssetBase = (path: string) => (path.startsWith("http") ? path : withBase(path));
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
@@ -122,7 +123,7 @@ const getCourseLink = (courseName: string) =>
         {data.snapshot && (
           <figure>
             <img
-              src={data.snapshot}
+              src={withAssetBase(data.snapshot)}
               alt={`${data.title} snapshot`}
               class="w-full max-w-2xl rounded-md border border-slate-200"
               loading="lazy"
@@ -133,7 +134,7 @@ const getCourseLink = (courseName: string) =>
         {data.architecture_diagram && (
           <figure>
             <img
-              src={data.architecture_diagram}
+              src={withAssetBase(data.architecture_diagram)}
               alt={`${data.title} architecture diagram`}
               class="w-full max-w-2xl rounded-md border border-slate-200"
               loading="lazy"

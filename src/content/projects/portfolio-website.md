@@ -11,8 +11,6 @@ summary: "A lightweight portfolio built to present projects and experience clear
 repo: "https://github.com/dosorio79/portfolio"
 ---
 
-2026 · Independent
-
 A lightweight portfolio built to present projects and experience clearly, without unnecessary complexity or heavy frontend frameworks.
 
 **Purpose**
