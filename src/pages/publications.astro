@@ -2,6 +2,10 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 
+const base = import.meta.env.BASE_URL;
+const basePath = base.endsWith("/") ? base : `${base}/`;
+const withBase = (path: string) => `${basePath}${path.replace(/^\/+/, "")}`;
+
 const publications = await getCollection("publications");
 
 const byNewest = (a: CollectionEntry<"publications">, b: CollectionEntry<"publications">) => {

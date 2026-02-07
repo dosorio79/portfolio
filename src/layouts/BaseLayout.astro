@@ -10,7 +10,8 @@ const {
 const fullTitle = `${title} | Portfolio`;
 const canonicalUrl = Astro.url.origin + Astro.url.pathname;
 const base = import.meta.env.BASE_URL;
-const withBase = (path) => `${base}${path.replace(/^\//, "")}`;
+const basePath = base.endsWith("/") ? base : `${base}/`;
+const withBase = (path) => `${basePath}${path.replace(/^\/+/, "")}`;
 const resolvedImage = image.startsWith("http") ? image : withBase(image);
 const imageUrl = new URL(resolvedImage, Astro.url.origin).toString();
 ---

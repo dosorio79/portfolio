@@ -9,10 +9,11 @@ const links = [
 ];
 
 const base = import.meta.env.BASE_URL;
-const withBase = (path) => `${base}${path.replace(/^\//, "")}`;
+const basePath = base.endsWith("/") ? base : `${base}/`;
+const withBase = (path) => `${basePath}${path.replace(/^\/+/, "")}`;
 const normalizePath = (path) => (path.replace(/\/+$/, "") || "/");
 const stripBase = (path) =>
-  path.startsWith(base) ? `/${path.slice(base.length)}` : path;
+  path.startsWith(basePath) ? `/${path.slice(basePath.length)}` : path;
 const currentPath = normalizePath(stripBase(Astro.url.pathname));
 ---
 
