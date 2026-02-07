@@ -9,6 +9,7 @@ stack:
   - "Docker"
 context: "course"
 course_name: "Big Data Analytics and Decision Making (ISEP)"
+course_role: "capstone"
 summary: "End-to-end ETL pipeline integrating urban mobility, air quality, and transit data for analytics-ready dashboards."
 repo: "https://github.com/dosorio79/proFinal_BDDM_ISEP"
 authors:

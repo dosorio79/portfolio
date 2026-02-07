@@ -12,7 +12,17 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props;
-const { data, body } = project;
+const { data } = project;
+const { Content } = await project.render();
+
+const courseLinks = [
+  { match: "DataTalksClub", href: "https://datatalks.club" },
+  { match: "ISEP", href: "https://www.isep.ipp.pt/Course/Course/325" },
+  { match: "Le Wagon", href: "https://www.lewagon.com/data-science-course" },
+];
+
+const getCourseLink = (courseName) =>
+  courseLinks.find((link) => courseName.includes(link.match))?.href;
 ---
 
 <BaseLayout
@@ -41,7 +51,25 @@ const { data, body } = project;
           <p>{data.context === "course" ? "Course" : "Independent"}</p>
         )}
         {data.context === "course" && data.course_name && (
-          <p>{data.course_name}</p>
+          <p class="flex flex-wrap items-center gap-2">
+            {getCourseLink(data.course_name) ? (
+              <a
+                href={getCourseLink(data.course_name)}
+                class="underline underline-offset-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {data.course_name}
+              </a>
+            ) : (
+              data.course_name
+            )}
+            {data.course_role && (
+              <span class="rounded-full border border-slate-200 px-2 py-0.5 text-[10px] uppercase tracking-wide text-slate-500">
+                {data.course_role}
+              </span>
+            )}
+          </p>
         )}
         <ul class="flex flex-wrap gap-2">
           {data.stack.map((item) => (
@@ -85,8 +113,45 @@ const { data, body } = project;
 
     </header>
 
+    {(data.snapshot || data.architecture_diagram || data.video_url) && (
+      <div class="mt-6 space-y-6 mb-6">
+        {data.snapshot && (
+          <figure>
+            <img
+              src={data.snapshot}
+              alt={`${data.title} snapshot`}
+              class="w-full max-w-2xl rounded-md border border-slate-200"
+              loading="lazy"
+            />
+          </figure>
+        )}
+
+        {data.architecture_diagram && (
+          <figure>
+            <img
+              src={data.architecture_diagram}
+              alt={`${data.title} architecture diagram`}
+              class="w-full max-w-2xl rounded-md border border-slate-200"
+              loading="lazy"
+            />
+          </figure>
+        )}
+
+        {data.video_url && (
+          <a
+            href={data.video_url}
+            class="inline-flex items-center gap-2 rounded-md bg-slate-900 px-3 py-1.5 text-sm text-white hover:bg-slate-800 font-sans"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Watch demo video →
+          </a>
+        )}
+      </div>
+    )}
+
     <section class="prose prose-slate max-w-none">
-      {body}
+      <Content />
     </section>
   </article>
 </BaseLayout>
