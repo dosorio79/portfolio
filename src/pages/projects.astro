@@ -36,7 +36,7 @@ const getCourseLink = (courseName: string) =>
   <div class="mt-8 font-serif leading-relaxed text-slate-800">
     <ul class="space-y-6">
       {sortedProjects.map((project) => (
-        <li class="rounded-sm border-l-2 border-slate-200 pl-4 transition-colors transition-transform duration-200 hover:bg-slate-50/60 hover:-translate-y-1">
+        <li class="rounded-sm border-l-2 border-slate-200 pl-4 transition-colors hover:bg-slate-50/60">
           <h2 class="font-medium">
             <a
               href={withBase(`/projects/${project.slug}`)}
@@ -75,9 +75,9 @@ const getCourseLink = (courseName: string) =>
             )}
           </p>
 
-          {project.data.repo && project.data.repo.length > 0 && (
+          {project.data.repo && (
             <a
-              class="mt-2 inline-flex items-center gap-2 text-sm text-slate-600 hover:text-indigo-600"
+              class="mt-2 inline-flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900"
               href={project.data.repo}
               rel="noopener noreferrer"
               target="_blank"
@@ -94,15 +94,6 @@ const getCourseLink = (courseName: string) =>
             </a>
           )}
 
-          {project.data.tags && project.data.tags.length > 0 && (
-            <ul class="mt-3 flex flex-wrap gap-2 font-sans text-xs">
-              {project.data.tags.map((tag) => (
-                <li class="rounded bg-indigo-50 px-2 py-1 text-indigo-700">
-                  {tag}
-                </li>
-              ))}
-            </ul>
-          )}
         </li>
       ))}
     </ul>

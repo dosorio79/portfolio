@@ -9,7 +9,6 @@ const projects = defineCollection({
     course_name: z.string().optional(),
     course_role: z.enum(["capstone", "homework"]).optional(),
     summary: z.string().optional(),
-    tags: z.array(z.string()).optional(),
     snapshot: z.string().optional(),
     architecture_diagram: z.string().optional(),
     video_url: z.string().url().optional(),
