@@ -4,10 +4,12 @@ import Header from "../components/Header.astro";
 const {
   title = "Daniel Osório",
   description = "...",
+    image = "/images/daniel_osorio.png",
 } = Astro.props;
 
 const fullTitle = `${title} | Portfolio`;
 const canonicalUrl = Astro.url.origin + Astro.url.pathname;
+const imageUrl = new URL(image, Astro.url.origin).toString();
 ---
 
 <!doctype html>
@@ -27,11 +29,14 @@ const canonicalUrl = Astro.url.origin + Astro.url.pathname;
         <meta property="og:title" content={fullTitle} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content={imageUrl} />
 
         <!-- Twitter -->
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={fullTitle} />
         <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={imageUrl} />
+        <meta name="twitter:image:alt" content="Portrait of Daniel Osório" />
 
         <!-- Favicon -->
         <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml" />

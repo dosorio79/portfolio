@@ -12,7 +12,8 @@ export async function getStaticPaths() {
 }
 
 const { pub } = Astro.props;
-const { data, body } = pub;
+const { data } = pub;
+const { Content } = await pub.render();
 ---
 
 <BaseLayout
@@ -60,7 +61,7 @@ const { data, body } = pub;
     </header>
 
     <section class="prose prose-slate max-w-none">
-      {body}
+      <Content />
     </section>
   </article>
 </BaseLayout>

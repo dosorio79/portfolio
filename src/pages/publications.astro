@@ -45,6 +45,9 @@ const highlightSet = new Set(highlightTargets.map(normalizeName));
 
 const isHighlightedAuthor = (name: string) => highlightSet.has(normalizeName(name));
 
+const getSummary = (data: CollectionEntry<"publications">["data"], body: string) =>
+  data.summary ?? body;
+
 
 ---
 
@@ -63,7 +66,7 @@ const isHighlightedAuthor = (name: string) => highlightSet.has(normalizeName(nam
             {featured.map(({ data, body }) => (
               <li class="rounded-sm border-l-2 border-slate-200 pl-4">
                 <h3 class="font-medium">{data.title} ({data.year})</h3>
-                <p class="mt-2 text-sm leading-snug text-slate-600">{body}</p>
+                <p class="mt-2 text-sm leading-snug text-slate-600">{getSummary(data, body)}</p>
                 <p class="mt-2 text-sm text-slate-500">
                   <span class="font-semibold text-slate-700">{data.journal}</span> ·{" "}
                   {data.authors.map((author, index) => (
@@ -108,7 +111,7 @@ const isHighlightedAuthor = (name: string) => highlightSet.has(normalizeName(nam
                 {peerReviewedAll.map(({ data, body }) => (
                   <li class="rounded-sm border-l-2 border-slate-200 pl-4">
                     <h3 class="font-medium">{data.title} ({data.year})</h3>
-                    <p class="mt-2 text-sm leading-snug text-slate-600">{body}</p>
+                    <p class="mt-2 text-sm leading-snug text-slate-600">{getSummary(data, body)}</p>
                     <p class="mt-2 text-sm text-slate-500">
                       <span class="font-semibold text-slate-700">{data.journal}</span> ·{" "}
                       {data.authors.map((author, index) => (
@@ -145,7 +148,7 @@ const isHighlightedAuthor = (name: string) => highlightSet.has(normalizeName(nam
                 {preprintAll.map(({ data, body }) => (
                   <li class="rounded-sm border-l-2 border-slate-200 pl-4">
                     <h3 class="font-medium">{data.title} ({data.year})</h3>
-                    <p class="mt-2 text-sm leading-snug text-slate-600">{body}</p>
+                    <p class="mt-2 text-sm leading-snug text-slate-600">{getSummary(data, body)}</p>
                     <p class="mt-2 text-sm text-slate-500">
                       <span class="font-semibold text-slate-700">{data.journal}</span> ·{" "}
                       {data.authors.map((author, index) => (

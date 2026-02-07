@@ -23,6 +23,7 @@ const publications = defineCollection({
     year: z.number(),
     journal: z.string(),
     authors: z.array(z.string()),
+    summary: z.string().optional(),
     link: z.string().url().optional(),
     featured: z.boolean().default(false),
     type: z.enum(["peer-reviewed", "preprint"]),
