@@ -1,9 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 
 const projects = await getCollection("projects");
-const byNewest = (a, b) => b.data.year - a.data.year;
+const byNewest = (
+  a: CollectionEntry<"projects">,
+  b: CollectionEntry<"projects">,
+) => b.data.year - a.data.year;
 const sortedProjects = [...projects].sort(byNewest);
 
 const courseLinks = [
@@ -12,7 +15,7 @@ const courseLinks = [
   { match: "Le Wagon", href: "https://www.lewagon.com/data-science-course" },
 ];
 
-const getCourseLink = (courseName) =>
+const getCourseLink = (courseName: string) =>
   courseLinks.find((link) => courseName.includes(link.match))?.href;
 ---
 
