@@ -2,6 +2,9 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 
+const base = import.meta.env.BASE_URL;
+const withBase = (path: string) => `${base}${path.replace(/^\//, "")}`;
+
 const projects = await getCollection("projects");
 const byNewest = (
   a: CollectionEntry<"projects">,
@@ -35,7 +38,7 @@ const getCourseLink = (courseName: string) =>
         <li class="rounded-sm border-l-2 border-slate-200 pl-4 transition-colors hover:bg-slate-50/60">
           <h2 class="font-medium">
             <a
-              href={`/projects/${project.slug}`}
+              href={withBase(`/projects/${project.slug}`)}
               class="hover:underline underline-offset-4"
             >
               {project.data.title}

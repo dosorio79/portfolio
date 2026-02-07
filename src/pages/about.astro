@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const base = import.meta.env.BASE_URL;
+const withBase = (path: string) => `${base}${path.replace(/^\//, "")}`;
 ---
 
 <BaseLayout
@@ -14,7 +17,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
     <div class="hidden shrink-0 md:block">
       <img
-        src="/images/daniel_osorio.png"
+        src={withBase("/images/daniel_osorio.png")}
         alt="Portrait of Daniel Osório"
         class="h-32 w-32 rounded-md object-cover grayscale"
         loading="lazy"

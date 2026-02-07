@@ -2,6 +2,9 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
+const base = import.meta.env.BASE_URL;
+const withBase = (path: string) => `${base}${path.replace(/^\//, "")}`;
+
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
 
@@ -31,7 +34,7 @@ const getCourseLink = (courseName: string) =>
 >
   <article class="font-serif leading-relaxed text-slate-800">
     <nav class="mb-6 font-sans text-sm text-slate-500">
-      <a href="/projects" class="hover:underline">
+      <a href={withBase("/projects")} class="hover:underline">
         Projects
       </a>
       <span class="mx-2">→</span>

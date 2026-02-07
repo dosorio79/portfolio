@@ -1,6 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SocialLinks from "../components/SocialLinks.astro";
+
+const base = import.meta.env.BASE_URL;
+const withBase = (path: string) => `${base}${path.replace(/^\//, "")}`;
 ---
 
 <BaseLayout
@@ -38,7 +41,7 @@ import SocialLinks from "../components/SocialLinks.astro";
 
     <!-- PHOTO -->
     <img
-      src="/images/daniel_osorio.png"
+      src={withBase("/images/daniel_osorio.png")}
       alt="Portrait of Daniel Osório"
       class="h-24 w-24 md:h-32 md:w-32 rounded-md object-cover grayscale mb-6"
       loading="lazy"
@@ -111,14 +114,14 @@ import SocialLinks from "../components/SocialLinks.astro";
     <ul class="mt-4 space-y-3 font-sans max-w-xl">
       <li class="flex items-start gap-2">
         <span class="pt-1 text-slate-400">•</span>
-        <a href="/projects" class="text-slate-700 hover:text-slate-900 hover:underline underline-offset-4">
+        <a href={withBase("/projects")} class="text-slate-700 hover:text-slate-900 hover:underline underline-offset-4">
           Data science & applied ML projects
         </a>
       </li>
 
       <li class="flex items-start gap-2">
         <span class="pt-1 text-slate-400">•</span>
-        <a href="/publications" class="text-slate-700 hover:text-slate-900 hover:underline underline-offset-4">
+        <a href={withBase("/publications")} class="text-slate-700 hover:text-slate-900 hover:underline underline-offset-4">
           Academic publications and research output
         </a>
       </li>
