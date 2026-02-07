@@ -20,5 +20,19 @@ authors:
   - "Kranthi Maddishetty"
 ---
 
-Built a deep learning pipeline to detect and recognize faces in images and video for safety monitoring.
-Trained a transfer-learning model and deployed it with a FastAPI backend and Streamlit interface.
+2023 · Course — Le Wagon Data Science Bootcamp
+
+Face detection and recognition on images and video for emergency monitoring in industrial safety contexts.
+
+**Purpose**
+Detect and recognize faces in safety monitoring footage to support rapid emergency response.
+
+**Approach**
+Built a transfer-learning pipeline for face detection/recognition and deployed it behind a FastAPI backend with a Streamlit interface for demos.
+
+**Constraints**
+Focused on images and video workflows with a lightweight demo deployment.
+
+**Tech stack**
+Python · OpenCV · MTCNN · TensorFlow · FastAPI · Streamlit
+

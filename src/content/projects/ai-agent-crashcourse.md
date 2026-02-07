@@ -14,14 +14,22 @@ snapshot: "/images/snapshot_githubrepoQA.png"
 architecture_diagram: "/images/snapshotgithubrepoQA_cli.png"
 ---
 
-**Overview**
-Streamlit app + CLI pipeline for asking questions about GitHub repo docs with an AI-powered agent.
+2025 · Course — AI Agents Crashcourse (DataTalksClub)
 
-**Core features**
-- Ingest and chunk Markdown docs (simple, sliding, paragraph, section)
-- Text, vector, and hybrid search over chunks
-- Conversational agent using OpenAI with Pydantic AI
-- Streamlit UI for interactive Q&A and a CLI for terminal workflows
+Streamlit app and CLI pipeline for asking questions about GitHub repo docs with an AI-powered agent.
 
-**Goal**
-Demonstrate a modular AI pipeline that moves from notebook experimentation to a usable interface.
+**Purpose**
+Build a practical Q&A workflow over documentation and show a usable interface beyond notebooks.
+
+**Approach**
+Ingested and chunked Markdown docs with multiple strategies, indexed with text/vector/hybrid search, and wired an OpenAI + Pydantic AI agent into both a Streamlit UI and a CLI.
+
+**Constraints**
+Kept the pipeline modular and focused on a clear path from experimentation to a working interface.
+
+**Recent updates**
+Added a UI snapshot and CLI diagram for quick context.
+
+**Tech stack**
+Python · Streamlit · OpenAI API · Pydantic AI · ChromaDB
+

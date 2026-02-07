@@ -18,5 +18,19 @@ authors:
   - "Pedro Gomes"
 ---
 
-Designed a star-schema data warehouse for shopping center rentals and occupancy analytics.
-Generated realistic test data with Faker and delivered SQL scripts for schema creation and analysis.
+2023 · Course — Data Warehouses (ISEP)
+
+Star-schema warehouse for rental operations with synthetic data generation and analytics queries.
+
+**Purpose**
+Model shopping center rental operations in a warehouse designed for occupancy analytics.
+
+**Approach**
+Designed a star schema, generated realistic synthetic data with Faker, and delivered SQL scripts for schema creation and analysis.
+
+**Constraints**
+Used synthetic data to keep the project reproducible without sensitive inputs.
+
+**Tech stack**
+PostgreSQL · Python · Jupyter · Faker · SQLAlchemy
+

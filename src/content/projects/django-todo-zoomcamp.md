@@ -14,21 +14,22 @@ repo: "https://github.com/dosorio79/ai-dev-tools-zoomcamp/tree/main/01-todo"
 snapshot: "/images/screenshot_todo.png"
 ---
 
-**Overview**
-Module 1 submission for the AI Dev Tools Zoomcamp. A complete Django TODO app built with AI-assisted workflows, focused on solid CRUD features and test coverage.
+2025 · Course — AI Dev Tools (DataTalksClub)
 
-**Features**
-- Create, edit, delete, and toggle TODO items
-- Due dates with overdue highlighting
-- Clean TailwindCSS UI
-- Full Django test suite
-- Makefile for common commands
+Module 1 homework: full CRUD TODO app with tests and a clean UI.
+
+**Purpose**
+Deliver a complete, tested CRUD app as a baseline for the course workflow.
+
+**Approach**
+Built a Django app with due dates, status toggles, and a clean Tailwind UI, backed by a full test suite and a Makefile for common tasks.
+
+**Constraints**
+Kept the stack simple with SQLite and a CDN-based Tailwind setup for quick iteration.
+
+**Recent updates**
+Added a screenshot for quick visual context.
 
 **Tech stack**
-- Django 5.2.8 with Python 3.11
-- SQLite for local persistence
-- TailwindCSS via CDN
+Python · Django · Tailwind CSS · SQLite
 
-**Local workflow**
-- `make install`, `make migrate`, `make run`
-- `make test` or `python manage.py test`

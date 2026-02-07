@@ -7,18 +7,26 @@ stack:
   - "TypeScript"
   - "Markdown"
 context: "independent"
-summary: "A minimalist Astro portfolio focused on performance, clarity, and content-first publishing."
+summary: "A lightweight portfolio built to present projects and experience clearly, without unnecessary complexity or heavy frontend frameworks."
 repo: "https://github.com/dosorio79/portfolio"
 ---
 
-**Purpose**
-Static, content-first portfolio to present work clearly without runtime JavaScript.
+2026 · Independent
 
-**Tech choices**
-Astro with Markdown content collections and Tailwind for a calm, readable layout.
+A lightweight portfolio built to present projects and experience clearly, without unnecessary complexity or heavy frontend frameworks.
+
+**Purpose**
+Create a simple, fast website where content and projects are easy to browse on both desktop and mobile, avoiding the overhead of typical JavaScript-heavy portfolios.
+
+**Approach**
+Used Astro with Markdown-based content and Tailwind CSS to keep pages static, maintainable, and performance-focused while preserving a clean reading experience.
 
 **Constraints**
-No SPA behavior, minimal dependencies, and a focus on performance and accessibility.
+Kept dependencies minimal, avoided SPA behavior, and prioritized accessibility and fast load times across devices.
 
 **Recent updates**
-Project snapshots, architecture diagrams, and demo links to add context without clutter.
+Added project snapshots and architecture diagrams to give more context without turning the site into a feature-heavy application.
+
+**Tech stack**
+Astro · Tailwind CSS · TypeScript · Markdown
+

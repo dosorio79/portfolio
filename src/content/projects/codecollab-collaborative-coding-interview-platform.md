@@ -15,21 +15,19 @@ repo: "https://github.com/dosorio79/ai-dev-tools-zoomcamp/tree/main/02-coding_pl
 video_url: "https://www.youtube.com/watch?v=huI30O4ScAw"
 ---
 
-**Overview**
-CodeCollab is a real-time interview-style coding platform inspired by CoderPad/CodeSignal, built to run entirely in-browser or in a single container.
+2025 · Course — AI Dev Tools (DataTalksClub)
 
-**Core features**
-- Live collaborative editor with presence and synchronized editing
-- JavaScript sandbox execution in the browser
-- Python execution via Pyodide (WASM)
-- Shareable session links and stateless, ephemeral sessions
+Real-time collaborative coding interview platform with in-browser execution.
 
-**Architecture notes**
-- React + Vite frontend with WebSocket-driven sync
-- Express backend for REST + WebSockets with in-memory session store
-- One-origin deployment (frontend served by backend) to avoid CORS
+**Purpose**
+Build a lightweight CoderPad-style experience that runs in the browser or a single container.
 
-**Local workflow**
-- `npm run dev` runs frontend and backend concurrently
-- Docker Compose for two-container dev
-- Render deployment via single-container `Dockerfile.render`
+**Approach**
+Implemented a React + Vite frontend with WebSocket sync, an Express backend for REST/WebSockets, and in-browser execution for JavaScript plus Pyodide for Python.
+
+**Constraints**
+Designed for one-origin deployment to avoid CORS and keep sessions stateless and ephemeral.
+
+**Tech stack**
+React · Vite · Express · WebSockets · Pyodide
+

@@ -20,6 +20,19 @@ authors:
   - "Tiago Fernandes"
 ---
 
-Built a full data pipeline that extracts multi-source urban data from Porto’s Urban Platform, GTFS feeds, and demographic sources.
-Automated ingestion, transformation, and loading into a star-schema warehouse with Airflow orchestration.
-Containerized the stack with Docker, using MinIO as the data lake and PostgreSQL as the warehouse.
+2024 · Course — Big Data Analytics and Decision Making (ISEP)
+
+End-to-end ETL pipeline integrating urban mobility, air quality, and transit data for analytics-ready dashboards.
+
+**Purpose**
+Create a reliable ingestion pipeline for multi-source urban data to support pollution analytics and dashboards.
+
+**Approach**
+Extracted data from Porto’s Urban Platform, GTFS feeds, and demographic sources, then orchestrated ELT into a star-schema warehouse with Airflow.
+
+**Constraints**
+Containerized the pipeline to keep the stack portable and reproducible across environments.
+
+**Tech stack**
+Python · Apache Airflow · PostgreSQL · MinIO · Docker
+

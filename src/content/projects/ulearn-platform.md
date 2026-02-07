@@ -16,18 +16,22 @@ architecture_diagram: "/images/architecture_ulearn.png"
 video_url: "https://youtu.be/HlbSlIufW2k"
 ---
 
-**Overview**
-uLearn delivers 15-minute, tightly scoped lessons to avoid open-ended “chat drift,” producing structured outputs that can be reused as Markdown or Jupyter notebooks.
+2026 · Course — AI Dev Tools (DataTalksClub)
 
-**Backend workflow**
-- Multi-agent pipeline: plan → generate structured blocks → validate format/time budget
-- Deterministic planning/validation; only content generation uses an LLM
-- MCP tools run advisory checks (e.g., Python syntax hints) and log to telemetry
+Micro-learning platform that generates 15-minute lessons with a multi-agent backend and a calm, fast frontend.
 
-**Frontend UX**
-- Structured block rendering with per-section copy
-- Full-lesson exports and in-browser Python execution via Pyodide
+**Purpose**
+Deliver tightly scoped lessons that avoid open-ended chat drift and produce reusable structured outputs.
 
-**Telemetry and persistence**
-- Stateless user experience; append-only telemetry for requests, summaries, attempts, failures
-- MongoDB or in-memory backends to support local dev and demo mode without external dependencies
+**Approach**
+Designed a multi-agent pipeline that plans, generates structured blocks, and validates format/time budget, with deterministic checks and LLMs only for content generation.
+
+**Constraints**
+Kept the user flow stateless with append-only telemetry and support for MongoDB or in-memory backends.
+
+**Recent updates**
+Added snapshots, an architecture diagram, and a demo video for quick context.
+
+**Tech stack**
+React · FastAPI · MongoDB · Pyodide
+

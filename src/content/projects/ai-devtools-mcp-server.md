@@ -14,21 +14,19 @@ repo: "https://github.com/dosorio79/ai-dev-tools-zoomcamp/tree/main/03-mcp"
 video_url: "https://youtu.be/RSdp_J6mOFA"
 ---
 
-**Overview**
-MCP server that downloads documentation repositories, builds a lightweight search index, and exposes tools to search and read docs. Includes a simple web scraping tool backed by Jina Reader.
+2025 · Course — AI Dev Tools (DataTalksClub)
 
-**Core capabilities**
-- Download GitHub repo ZIPs and cache them locally
-- Index Markdown docs with `minsearch`
-- Expose MCP tools: `scrape`, `search_repo_index`, `read_repo_file`
+MCP server that indexes GitHub docs and exposes search, read, and scrape tools.
 
-**Architecture notes**
-- FastMCP server entrypoint in `main.py`
-- Config-driven repos and indexing via `server_config.yaml`
-- Search and ZIP parsing helpers in `search.py`
-- Jina Reader fetch helper in `scrape.py`
+**Purpose**
+Provide a small, focused MCP server for documentation lookup with simple, reusable tools.
 
-**Local workflow**
-- `uv sync` for a dev install (exposes `hw3-mcp`)
-- `uv run hw3-mcp` to build the index and serve MCP tools over STDIO
-- Optional MCP Inspector for interactive testing
+**Approach**
+Downloaded repo ZIPs, indexed Markdown with `minsearch`, and exposed `scrape`, `search_repo_index`, and `read_repo_file` tools via FastMCP with config-driven repos.
+
+**Constraints**
+Kept the server lightweight, config-first, and suitable for STDIO-based MCP workflows.
+
+**Tech stack**
+Python · FastMCP · uv · minsearch
+
