@@ -1,7 +1,19 @@
 import fs from "node:fs";
 import path from "node:path";
+import { pathToFileURL } from "node:url";
 
 const distDir = path.resolve("dist");
+const astroConfigPath = path.resolve("astro.config.mjs");
+
+let basePath = "";
+try {
+  const astroConfig = (await import(pathToFileURL(astroConfigPath).href)).default;
+  const rawBase = astroConfig?.base ?? "/";
+  const normalized = rawBase.startsWith("/") ? rawBase : `/${rawBase}`;
+  basePath = normalized === "/" ? "" : normalized.replace(/\/+$/, "");
+} catch {
+  basePath = "";
+}
 
 if (!fs.existsSync(distDir)) {
   console.error("dist/ not found. Run `npm run build` first.");
@@ -37,6 +49,18 @@ function isExternal(href) {
 function normalizeHref(href) {
   const [noHash] = href.split("#");
   const [noQuery] = noHash.split("?");
+  if (!basePath || !noQuery.startsWith("/")) {
+    return noQuery;
+  }
+
+  if (noQuery === basePath || noQuery === `${basePath}/`) {
+    return "/";
+  }
+
+  if (noQuery.startsWith(`${basePath}/`)) {
+    return noQuery.slice(basePath.length) || "/";
+  }
+
   return noQuery;
 }
 
