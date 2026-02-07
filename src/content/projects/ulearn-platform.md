@@ -16,8 +16,6 @@ architecture_diagram: "/images/architecture_ulearn.png"
 video_url: "https://youtu.be/HlbSlIufW2k"
 ---
 
-2026 · Course — AI Dev Tools (DataTalksClub)
-
 Micro-learning platform that generates 15-minute lessons with a multi-agent backend and a calm, fast frontend.
 
 **Purpose**

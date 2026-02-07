@@ -14,8 +14,6 @@ repo: "https://github.com/dosorio79/ai-dev-tools-zoomcamp/tree/main/01-todo"
 snapshot: "/images/screenshot_todo.png"
 ---
 
-2025 · Course — AI Dev Tools (DataTalksClub)
-
 Module 1 homework: full CRUD TODO app with tests and a clean UI.
 
 **Purpose**

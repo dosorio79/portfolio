@@ -20,8 +20,6 @@ authors:
   - "Kranthi Maddishetty"
 ---
 
-2023 · Course — Le Wagon Data Science Bootcamp
-
 Face detection and recognition on images and video for emergency monitoring in industrial safety contexts.
 
 **Purpose**

@@ -15,8 +15,6 @@ repo: "https://github.com/dosorio79/ai-dev-tools-zoomcamp/tree/main/02-coding_pl
 video_url: "https://www.youtube.com/watch?v=huI30O4ScAw"
 ---
 
-2025 · Course — AI Dev Tools (DataTalksClub)
-
 Real-time collaborative coding interview platform with in-browser execution.
 
 **Purpose**

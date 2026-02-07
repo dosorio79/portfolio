@@ -20,8 +20,6 @@ authors:
   - "Tiago Fernandes"
 ---
 
-2024 · Course — Big Data Analytics and Decision Making (ISEP)
-
 End-to-end ETL pipeline integrating urban mobility, air quality, and transit data for analytics-ready dashboards.
 
 **Purpose**

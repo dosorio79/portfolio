@@ -14,8 +14,6 @@ repo: "https://github.com/dosorio79/ai-dev-tools-zoomcamp/tree/main/03-mcp"
 video_url: "https://youtu.be/RSdp_J6mOFA"
 ---
 
-2025 · Course — AI Dev Tools (DataTalksClub)
-
 MCP server that indexes GitHub docs and exposes search, read, and scrape tools.
 
 **Purpose**

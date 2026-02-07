@@ -18,8 +18,6 @@ authors:
   - "Pedro Gomes"
 ---
 
-2023 · Course — Data Warehouses (ISEP)
-
 Star-schema warehouse for rental operations with synthetic data generation and analytics queries.
 
 **Purpose**

@@ -14,8 +14,6 @@ snapshot: "/images/snapshot_githubrepoQA.png"
 architecture_diagram: "/images/snapshotgithubrepoQA_cli.png"
 ---
 
-2025 · Course — AI Agents Crashcourse (DataTalksClub)
-
 Streamlit app and CLI pipeline for asking questions about GitHub repo docs with an AI-powered agent.
 
 **Purpose**
