@@ -3,6 +3,7 @@
 A modern, minimalist portfolio website built with Astro. This static site showcases projects and content with a focus on performance, simplicity, and maintainability.
 
 [![CI](https://github.com/dosorio79/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/dosorio79/portfolio/actions/workflows/ci.yml)
+[![Pages](https://github.com/dosorio79/portfolio/actions/workflows/pages.yml/badge.svg)](https://github.com/dosorio79/portfolio/actions/workflows/pages.yml)
 [![Astro](https://img.shields.io/badge/Astro-5.17-BC52EE?logo=astro&logoColor=white)](https://astro.build)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
@@ -54,7 +55,7 @@ All commands are run from the root of the project:
 
 ## 🚀 Deployment
 
-Deployed via GitHub Pages at https://dosorio79.github.io/.
+Deployed via GitHub Pages at https://dosorio79.github.io/portfolio/.
 
 ## 📄 License
 
