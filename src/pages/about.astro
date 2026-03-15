@@ -1,9 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-const base = import.meta.env.BASE_URL;
-const basePath = base.endsWith("/") ? base : `${base}/`;
-const withBase = (path: string) => `${basePath}${path.replace(/^\/+/, "")}`;
+import { withBase } from "../utils/paths";
 ---
 
 <BaseLayout
