@@ -1,9 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import portrait from "../assets/images/daniel_osorio.png";
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-const base = import.meta.env.BASE_URL;
-const basePath = base.endsWith("/") ? base : `${base}/`;
-const withBase = (path: string) => `${basePath}${path.replace(/^\/+/, "")}`;
 ---
 
 <BaseLayout
@@ -17,11 +15,10 @@ const withBase = (path: string) => `${basePath}${path.replace(/^\/+/, "")}`;
       </h1>
     </div>
     <div class="hidden shrink-0 md:block">
-      <img
-        src={withBase("/images/daniel_osorio.png")}
+      <Image
+        src={portrait}
         alt="Portrait of Daniel Osório"
         class="h-32 w-32 rounded-md object-cover grayscale"
-        loading="lazy"
         width="128"
         height="128"
       />

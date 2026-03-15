@@ -1,24 +1,21 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
-
-const base = import.meta.env.BASE_URL;
-const basePath = base.endsWith("/") ? base : `${base}/`;
-const withBase = (path: string) => `${basePath}${path.replace(/^\/+/, "")}`;
-const withAssetBase = (path: string) => (path.startsWith("http") ? path : withBase(path));
+import { getCollection, render } from "astro:content";
+import { withBase } from "../../utils/paths";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
 
   return projects.map((project) => ({
-    params: { slug: project.slug },
+    params: { slug: project.id },
     props: { project },
   }));
 }
 
 const { project } = Astro.props;
 const { data } = project;
-const { Content } = await project.render();
+const { Content } = await render(project);
 
 const courseLinks = [
   { match: "DataTalksClub", href: "https://datatalks.club" },
@@ -122,22 +119,20 @@ const getCourseLink = (courseName: string) =>
       <div class="mt-6 space-y-6 mb-6">
         {data.snapshot && (
           <figure>
-            <img
-              src={withAssetBase(data.snapshot)}
+            <Image
+              src={data.snapshot}
               alt={`${data.title} snapshot`}
               class="w-full max-w-2xl rounded-md border border-slate-200"
-              loading="lazy"
             />
           </figure>
         )}
 
         {data.architecture_diagram && (
           <figure>
-            <img
-              src={withAssetBase(data.architecture_diagram)}
+            <Image
+              src={data.architecture_diagram}
               alt={`${data.title} architecture diagram`}
               class="w-full max-w-2xl rounded-md border border-slate-200"
-              loading="lazy"
             />
           </figure>
         )}

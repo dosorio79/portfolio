@@ -1,10 +1,9 @@
 ---
+import { Image } from "astro:assets";
+import portrait from "../assets/images/daniel_osorio.png";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SocialLinks from "../components/SocialLinks.astro";
-
-const base = import.meta.env.BASE_URL;
-const basePath = base.endsWith("/") ? base : `${base}/`;
-const withBase = (path: string) => `${basePath}${path.replace(/^\/+/, "")}`;
+import { withBase } from "../utils/paths";
 ---
 
 <BaseLayout
@@ -41,11 +40,10 @@ const withBase = (path: string) => `${basePath}${path.replace(/^\/+/, "")}`;
     <div class="border-l-2 border-slate-200 pl-5 md:pl-6 pt-2 md:pt-14">
 
     <!-- PHOTO -->
-    <img
-      src={withBase("/images/daniel_osorio.png")}
+    <Image
+      src={portrait}
       alt="Portrait of Daniel Osório"
       class="h-24 w-24 md:h-32 md:w-32 rounded-md object-cover grayscale mb-6"
-      loading="lazy"
       width="128"
       height="128"
     />

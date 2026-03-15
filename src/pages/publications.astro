@@ -45,8 +45,10 @@ const highlightSet = new Set(highlightTargets.map(normalizeName));
 
 const isHighlightedAuthor = (name: string) => highlightSet.has(normalizeName(name));
 
-const getSummary = (data: CollectionEntry<"publications">["data"], body: string) =>
-  data.summary ?? body;
+const getSummary = (
+  data: CollectionEntry<"publications">["data"],
+  body?: string,
+) => data.summary ?? body ?? "";
 
 
 ---

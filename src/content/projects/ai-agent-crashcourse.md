@@ -10,8 +10,8 @@ stack:
 context: "course"
 course_name: "AI Agents Crashcourse (DataTalksClub)"
 repo: "https://github.com/dosorio79/ai-agent-crashcourse"
-snapshot: "/images/snapshot_githubrepoQA.png"
-architecture_diagram: "/images/snapshotgithubrepoQA_cli.png"
+snapshot: "../../assets/images/snapshot_githubrepoQA.png"
+architecture_diagram: "../../assets/images/snapshotgithubrepoQA_cli.png"
 ---
 
 Streamlit app and CLI pipeline for asking questions about GitHub repo docs with an AI-powered agent.
@@ -30,4 +30,3 @@ Added a UI snapshot and CLI diagram for quick context.
 
 **Tech stack**
 Python · Streamlit · OpenAI API · Pydantic AI · ChromaDB
-

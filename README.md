@@ -44,6 +44,8 @@ A modern, minimalist portfolio website built with Astro. This static site showca
 
 All commands are run from the root of the project:
 
+This project targets Node.js `22.12.0` or newer.
+
 | Command               | Action                                      |
 | :-------------------- | :------------------------------------------ |
 | `npm install`         | Install dependencies                        |

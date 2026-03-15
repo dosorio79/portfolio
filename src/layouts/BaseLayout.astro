@@ -1,18 +1,23 @@
 ---
+import portrait from "../assets/images/daniel_osorio.png";
 import Header from "../components/Header.astro";
+import "../styles/global.css";
+import { withBase } from "../utils/paths";
 
 const {
   title = "Daniel Osório",
   description = "...",
-    image = "/images/daniel_osorio.png",
+    image = portrait,
 } = Astro.props;
 
 const fullTitle = `${title} | Portfolio`;
 const canonicalUrl = Astro.url.origin + Astro.url.pathname;
-const base = import.meta.env.BASE_URL;
-const basePath = base.endsWith("/") ? base : `${base}/`;
-const withBase = (path: string) => `${basePath}${path.replace(/^\/+/, "")}`;
-const resolvedImage = image.startsWith("http") ? image : withBase(image);
+const resolvedImage =
+  typeof image === "string"
+    ? image.startsWith("http")
+      ? image
+      : withBase(image)
+    : image.src;
 const imageUrl = new URL(resolvedImage, Astro.url.origin).toString();
 ---
 
@@ -47,13 +52,6 @@ const imageUrl = new URL(resolvedImage, Astro.url.origin).toString();
         <link rel="icon" href={withBase("/favicon/favicon-32.png")} sizes="32x32" type="image/png" />
         <link rel="icon" href={withBase("/favicon/favicon-16.png")} sizes="16x16" type="image/png" />
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;600&display=swap"
-            rel="stylesheet"
-        />
     </head>
     <body class="min-h-screen bg-white font-sans text-slate-900">
         <div class="mx-auto max-w-3xl p-6">
