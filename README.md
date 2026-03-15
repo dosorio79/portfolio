@@ -65,7 +65,7 @@ Use `nvm use` if you have `nvm` installed.
 
 Deployed via GitHub Pages at https://dosorio79.github.io/portfolio/.
 
-The current released version is `v0.1.0`.
+The current released version is `v0.1.2`.
 
 ## 📄 License
 
