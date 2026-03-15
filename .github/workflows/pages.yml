@@ -28,7 +28,7 @@ jobs:
           path: |
             .astro
             node_modules/.cache
-          key: astro-${{ runner.os }}-${{ hashFiles('package-lock.json', 'astro.config.mjs', 'tailwind.config.js') }}
+          key: astro-${{ runner.os }}-${{ hashFiles('package-lock.json', 'astro.config.mjs', 'src/styles/global.css') }}
       - run: npm ci
       - run: npm run check
       - run: npm run build
