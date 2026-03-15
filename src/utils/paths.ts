@@ -9,6 +9,3 @@ export const normalizePath = (path: string) =>
 
 export const stripBase = (path: string) =>
   path.startsWith(basePath) ? `/${path.slice(basePath.length)}` : path;
-
-export const withAssetBase = (path: string) =>
-  path.startsWith("http") ? path : withBase(path);

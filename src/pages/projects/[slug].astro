@@ -1,7 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection, render } from "astro:content";
-import { withAssetBase, withBase } from "../../utils/paths";
+import { withBase } from "../../utils/paths";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
@@ -118,22 +119,20 @@ const getCourseLink = (courseName: string) =>
       <div class="mt-6 space-y-6 mb-6">
         {data.snapshot && (
           <figure>
-            <img
-              src={withAssetBase(data.snapshot)}
+            <Image
+              src={data.snapshot}
               alt={`${data.title} snapshot`}
               class="w-full max-w-2xl rounded-md border border-slate-200"
-              loading="lazy"
             />
           </figure>
         )}
 
         {data.architecture_diagram && (
           <figure>
-            <img
-              src={withAssetBase(data.architecture_diagram)}
+            <Image
+              src={data.architecture_diagram}
               alt={`${data.title} architecture diagram`}
               class="w-full max-w-2xl rounded-md border border-slate-200"
-              loading="lazy"
             />
           </figure>
         )}

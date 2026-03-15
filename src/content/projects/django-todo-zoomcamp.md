@@ -11,7 +11,7 @@ course_name: "AI Dev Tools (DataTalksClub)"
 course_role: "homework"
 summary: "Module 1 homework: full CRUD TODO app with tests and a clean UI."
 repo: "https://github.com/dosorio79/ai-dev-tools-zoomcamp/tree/main/01-todo"
-snapshot: "/images/screenshot_todo.png"
+snapshot: "../../assets/images/screenshot_todo.png"
 ---
 
 Module 1 homework: full CRUD TODO app with tests and a clean UI.
@@ -30,4 +30,3 @@ Added a screenshot for quick visual context.
 
 **Tech stack**
 Python · Django · Tailwind CSS · SQLite
-

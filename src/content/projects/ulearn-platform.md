@@ -11,8 +11,8 @@ course_name: "AI Dev Tools (DataTalksClub)"
 course_role: "capstone"
 summary: "Micro-learning platform that generates 15-minute lessons with a multi-agent backend and a calm, fast frontend."
 repo: "https://github.com/dosorio79/ulearn-platform"
-snapshot: "/images/snapshot_ulearn.png"
-architecture_diagram: "/images/architecture_ulearn.png"
+snapshot: "../../assets/images/snapshot_ulearn.png"
+architecture_diagram: "../../assets/images/architecture_ulearn.png"
 video_url: "https://youtu.be/HlbSlIufW2k"
 ---
 
@@ -32,4 +32,3 @@ Added snapshots, an architecture diagram, and a demo video for quick context.
 
 **Tech stack**
 React · FastAPI · MongoDB · Pyodide
-

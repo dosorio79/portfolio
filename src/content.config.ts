@@ -4,21 +4,22 @@ import { z } from "astro/zod";
 
 const projects = defineCollection({
   loader: glob({ base: "./src/content/projects", pattern: "**/*.md" }),
-  schema: z.object({
-    title: z.string(),
-    year: z.number(),
-    stack: z.array(z.string()),
-    context: z.enum(["course", "independent"]).optional(),
-    course_name: z.string().optional(),
-    course_role: z.enum(["capstone", "homework"]).optional(),
-    summary: z.string().optional(),
-    tags: z.array(z.string()).optional(),
-    snapshot: z.string().optional(),
-    architecture_diagram: z.string().optional(),
-    video_url: z.url().optional(),
-    repo: z.url().optional(),
-    authors: z.array(z.string()).optional(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      year: z.number(),
+      stack: z.array(z.string()),
+      context: z.enum(["course", "independent"]).optional(),
+      course_name: z.string().optional(),
+      course_role: z.enum(["capstone", "homework"]).optional(),
+      summary: z.string().optional(),
+      tags: z.array(z.string()).optional(),
+      snapshot: image().optional(),
+      architecture_diagram: image().optional(),
+      video_url: z.url().optional(),
+      repo: z.url().optional(),
+      authors: z.array(z.string()).optional(),
+    }),
 });
 
 const publications = defineCollection({

@@ -1,6 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import portrait from "../assets/images/daniel_osorio.png";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { withBase } from "../utils/paths";
 ---
 
 <BaseLayout
@@ -14,11 +15,10 @@ import { withBase } from "../utils/paths";
       </h1>
     </div>
     <div class="hidden shrink-0 md:block">
-      <img
-        src={withBase("/images/daniel_osorio.png")}
+      <Image
+        src={portrait}
         alt="Portrait of Daniel Osório"
         class="h-32 w-32 rounded-md object-cover grayscale"
-        loading="lazy"
         width="128"
         height="128"
       />
