@@ -1,6 +1,9 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
+import { glob } from "astro/loaders";
+import { z } from "astro/zod";
 
 const projects = defineCollection({
+  loader: glob({ base: "./src/content/projects", pattern: "**/*.md" }),
   schema: z.object({
     title: z.string(),
     year: z.number(),
@@ -12,20 +15,21 @@ const projects = defineCollection({
     tags: z.array(z.string()).optional(),
     snapshot: z.string().optional(),
     architecture_diagram: z.string().optional(),
-    video_url: z.string().url().optional(),
-    repo: z.string().url().optional(),
+    video_url: z.url().optional(),
+    repo: z.url().optional(),
     authors: z.array(z.string()).optional(),
   }),
 });
 
 const publications = defineCollection({
+  loader: glob({ base: "./src/content/publications", pattern: "**/*.md" }),
   schema: z.object({
     title: z.string(),
     year: z.number(),
     journal: z.string(),
     authors: z.array(z.string()),
     summary: z.string().optional(),
-    link: z.string().url().optional(),
+    link: z.url().optional(),
     featured: z.boolean().default(false),
     type: z.enum(["peer-reviewed", "preprint"]),
   }),
