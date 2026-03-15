@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "type": "module",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "scripts": {
     "clean:astro": "rm -rf .astro/collections .astro/data-store.json",
     "dev": "astro dev",
@@ -12,8 +12,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@fontsource/inter": "^5.2.8",
-    "@fontsource/source-serif-4": "^5.2.9",
+    "@fontsource-variable/inter": "^5.2.8",
+    "@fontsource-variable/source-serif-4": "^5.2.9",
     "@tailwindcss/typography": "^0.5.19"
   },
   "devDependencies": {

@@ -31,7 +31,7 @@ const getCourseLink = (courseName: string) =>
   title={`${data.title} — Project`}
   description="Applied data science project focused on modeling, interpretation, and decision support."
 >
-  <article class="font-serif leading-relaxed text-slate-800">
+  <article class="font-sans leading-relaxed text-slate-800">
     <nav class="mb-6 font-sans text-sm text-slate-500">
       <a href={withBase("/projects")} class="hover:underline">
         Projects
@@ -150,7 +150,7 @@ const getCourseLink = (courseName: string) =>
       </div>
     )}
 
-    <section class="prose prose-slate max-w-none">
+    <section class="prose prose-slate max-w-none font-serif">
       <Content />
     </section>
   </article>
