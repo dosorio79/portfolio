@@ -21,7 +21,7 @@ const { Content } = await render(pub);
   title={`${data.title} — Publication`}
   description={`Academic publication in ${data.journal} (${data.year}).`}
 >
-  <article class="font-serif leading-relaxed text-slate-800">
+  <article class="font-sans leading-relaxed text-slate-800">
     <nav class="mb-6 font-sans text-sm text-slate-500">
       <a href={withBase("/publications")} class="hover:underline">
         Publications
@@ -61,7 +61,7 @@ const { Content } = await render(pub);
       )}
     </header>
 
-    <section class="prose prose-slate max-w-none">
+    <section class="prose prose-slate max-w-none font-serif">
       <Content />
     </section>
   </article>
