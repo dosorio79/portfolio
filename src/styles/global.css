@@ -8,6 +8,9 @@
 @theme {
   --font-sans: "Inter", system-ui, sans-serif;
   --font-serif: "Source Serif 4", Georgia, serif;
+  --color-accent: oklch(0.64 0.18 46);
+  --color-accent-strong: oklch(0.56 0.16 44);
+  --color-accent-soft: oklch(0.95 0.03 52);
 }
 
 html {
