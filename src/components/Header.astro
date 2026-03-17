@@ -28,8 +28,8 @@ const currentPath = normalizePath(stripBase(Astro.url.pathname));
           class={[
             "pb-1",
             isActive
-              ? "border-b-2 border-slate-900 text-slate-900"
-              : "text-slate-600 hover:text-indigo-600",
+              ? "border-b-2 border-accent text-accent-strong"
+              : "text-slate-600 hover:text-accent",
           ].join(" ")}
         >
           {link.label}
