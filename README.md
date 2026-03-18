@@ -50,7 +50,7 @@ All commands are run from the root of the project:
 
 This project targets Node.js `22.12.0` or newer.
 
-Use `nvm use` if you have `nvm` installed.
+If you use `nvm`, run `nvm use` before installing dependencies or running Astro commands.
 
 | Command               | Action                                      |
 | :-------------------- | :------------------------------------------ |
@@ -60,6 +60,8 @@ Use `nvm use` if you have `nvm` installed.
 | `npm run preview`     | Preview the build locally                   |
 | `npm run check`       | Run Astro content/type checks               |
 | `npm run check:links` | Check internal links in generated HTML      |
+
+With `.nvmrc` present, `nvm use` will select the expected local Node version automatically.
 
 ## 🚀 Deployment
 
