@@ -26,5 +26,8 @@ pnpm-debug.log*
 # VS Code settings
 .vscode/
 
+# Codex local state
+.codex
+
 # local notebooks
 notebooks/
