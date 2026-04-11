@@ -12,10 +12,6 @@ stack:
   - "pandas"
 context: "independent"
 summary: "Conference schedule planning app for Data Makers Fest 2026 that turns broad interests into a workable agenda using recommendation scoring, conflict checks, and calendar export."
-tags:
-  - "Hackathon"
-  - "Private repo"
-  - "Shared project"
 ---
 
 North Star is a conference schedule planning app for Data Makers Fest 2026. It helps attendees turn broad interests into a workable event agenda by combining session metadata, recommendation scoring, conflict checks, and calendar export.
