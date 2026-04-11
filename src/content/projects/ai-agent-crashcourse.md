@@ -9,6 +9,7 @@ stack:
   - "ChromaDB"
 context: "course"
 course_name: "AI Agents Crashcourse (DataTalksClub)"
+course_role: "capstone"
 repo: "https://github.com/dosorio79/ai-agent-crashcourse"
 snapshot: "../../assets/images/snapshot_githubrepoQA.png"
 architecture_diagram: "../../assets/images/snapshotgithubrepoQA_cli.png"

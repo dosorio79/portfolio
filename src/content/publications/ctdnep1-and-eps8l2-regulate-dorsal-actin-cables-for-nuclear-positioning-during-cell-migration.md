@@ -13,6 +13,7 @@ authors:
   - "Janota, C.S."
   - "Cadot, B."
   - "Gomes, E.R."
+summary: "Identifies Ctdnep1 and Eps8L2 as regulators of dorsal actin cable organization required for proper nuclear positioning during cell migration."
 link: "https://doi.org/10.1016/j.cub.2021.01.007"
 type: "peer-reviewed"
 featured: true
